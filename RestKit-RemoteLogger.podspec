@@ -28,16 +28,17 @@ EOS
 
   ### Subspecs
 
+  s.subspec 'Core' do |cs|    
+    cs.dependency 'RestKit/RemoteLogger'
+    cs.dependency 'RestKit/ObjectMapping'
+    cs.dependency 'RestKit/Network'
+    cs.dependency 'RestKit/CoreData'
+  end
+
   s.subspec 'RemoteLogger' do |rl|
     rl.source_files   = 'RemoteLogger/RemoteLogger.{h,m}', 'RemoteLogger/RemoteLoggerServiceProvider.{h,m}'    
     rl.dependency 'CocoaLumberjack'  
     rl.dependency 'OpenUDID'
-  end
-  
-  s.subspec 'Core' do |cs|    
-    cs.dependency 'RestKit/ObjectMapping'
-    cs.dependency 'RestKit/Network'
-    cs.dependency 'RestKit/CoreData'
   end
   
   s.subspec 'ObjectMapping' do |os|
