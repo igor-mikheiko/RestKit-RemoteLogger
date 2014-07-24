@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   
   # Add Core Data to the PCH if the Core Data subspec is imported. This enables conditional compilation to kick in.
   s.prefix_header_contents = <<-EOS
-#ifdef COCOAPODS_POD_AVAILABLE_RestKit_CoreData
+#ifdef COCOAPODS_POD_AVAILABLE_RestKit_RemoteLogger_CoreData
     #import <CoreData/CoreData.h>
 #endif
 
