@@ -1,12 +1,15 @@
 Pod::Spec.new do |s|
-  s.name             =  'RestKit'
+  s.name             =  'RestKit-RemoteLogger'
   s.version          =  '0.23.2'
   s.summary          =  'RestKit is a framework for consuming and modeling RESTful web resources on iOS and OS X.'
   s.homepage         =  'http://www.restkit.org'
   s.social_media_url =  'https://twitter.com/RestKit'
   s.author           =  { 'Blake Watters' => 'blakewatters@gmail.com' }
-  s.source           =  { :git => 'https://github.com/RestKit/RestKit.git', :tag => "v#{s.version}" }
+  s.source           =  { :git => 'https://github.com/igor-mikheiko/RestKit-RemoteLogger.git' }
   s.license          =  'Apache License, Version 2.0'
+
+  # RemoteLogger setup
+  
 
   # Platform setup
   s.requires_arc = true
@@ -27,6 +30,12 @@ EOS
   s.header_mappings_dir = 'Code'
 
   ### Subspecs
+
+  s.subspec 'RemoteLogger' do |rl|
+    rl.source_files   = 'RemoteLogger/RemoteLogger.{h,m}', 'RemoteLogger/RemoteLoggerServiceProvider.{h,m}'    
+    rl.dependency 'CocoaLumberjack'  
+    rl.dependency 'OpenUDID'
+  end
   
   s.subspec 'Core' do |cs|    
     cs.dependency 'RestKit/ObjectMapping'
