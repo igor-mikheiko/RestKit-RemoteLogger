@@ -8,9 +8,6 @@ Pod::Spec.new do |s|
   s.source           =  { :git => 'https://github.com/igor-mikheiko/RestKit-RemoteLogger.git' }
   s.license          =  'Apache License, Version 2.0'
 
-  # RemoteLogger setup
-  
-
   # Platform setup
   s.requires_arc = true
   s.ios.deployment_target = '5.0'
